@@ -40,13 +40,11 @@ export class DetallesComponent implements OnInit {
     console.log('ID', this.id);
 
     this.movieService.getDetalles( this.id ).subscribe(resp => {
-      console.log(resp)
       this.pelicula = resp;
     });
 
 
     this.movieService.getCreditos( this.id ).subscribe(resp => {
-      console.log('Creditos', resp);
       this.actores = resp.cast;
     });
 
