@@ -18,7 +18,7 @@ export class Tab2Page implements OnInit {
 
 
   constructor( private moviesServices:MoviesService,
-               private modalCtrl: ModalController ) {}
+               private modalCtrl:ModalController ) {}
 
   ngOnInit() {
     

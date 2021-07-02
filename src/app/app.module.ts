@@ -10,17 +10,28 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ComponentsModule } from './components/components.module';
 
+import { NativeStorage } from '@ionic-native/native-storage/ngx';
+
+import { Storage } from '@ionic/storage-angular';
+import { IonicStorageModule } from '@ionic/storage-angular';
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
   imports: [
     BrowserModule, 
+    IonicStorageModule.forRoot(),
     IonicModule.forRoot(), 
     AppRoutingModule,
     HttpClientModule,
     ComponentsModule
   ],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  providers: [
+    Storage,
+    IonicStorageModule,
+    NativeStorage,
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
