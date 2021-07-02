@@ -14,7 +14,7 @@ export class Tab2Page implements OnInit {
   textoBuscar = '';
   buscando = false;
   peliculas: Pelicula[] = [];
-  ideas: string[] = [ 'viuda negra', 'Luca', 'bubalu' ];
+  
 
 
   constructor( private moviesServices:MoviesService,
